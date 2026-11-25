@@ -23,6 +23,7 @@
     try { sessionStorage.setItem('pr_intro', '1'); } catch { /* ignore */ }
     setTimeout(() => intro.classList.add('gone'), 900);
   };
+  if (new URLSearchParams(location.search).get('intro') === '0') seen = true; // ?intro=0 skips the animation
   if (seen) intro.classList.add('gone');
   else {
     document.body.classList.add('lock');
@@ -97,14 +98,14 @@
       const q = cart[p.id] || 0;
       const art = p.image ? `<img src="${esc(p.image)}" alt="">` : `<div class="plate">${ART[p.id] || esc(p.emoji)}</div>`;
       const action = !p.available
-        ? '<button class="add" disabled>Sold out</button>'
+        ? '<button class="add" disabled title="Sold out">అయిపోయింది</button>'
         : q
           ? `<div class="stepper"><button data-dec="${esc(p.id)}" aria-label="Remove one">−</button><span>${q}</span><button data-inc="${esc(p.id)}" aria-label="Add one">+</button></div>`
-          : `<button class="add" data-inc="${esc(p.id)}">Add +</button>`;
+          : `<button class="add" data-inc="${esc(p.id)}">+ Add</button>`;
       return `<article class="card">
         <div class="card-art">${p.tag ? `<span class="tag">${esc(p.tag)}</span>` : ''}${p.fewLeft ? `<span class="few">Only ${p.fewLeft} left!</span>` : ''}${art}</div>
         <div class="card-body">
-          <h3>${esc(p.name)}</h3><div class="telugu">${esc(p.telugu)}</div>
+          ${p.telugu ? `<h3>${esc(p.telugu)}</h3><div class="en-name">${esc(p.name)}</div>` : `<h3>${esc(p.name)}</h3>`}
           <p>${esc(p.desc)}</p>
           <div class="card-foot"><div class="price">${rupee(p.price)}<small>${esc(p.unit)}</small></div>${action}</div>
         </div></article>`;
@@ -244,19 +245,20 @@
 
   // ---------- Tips ----------
   const tips = [
-    '💡 Tip: Don\'t stir the batter too much — it keeps the air in for fluffy idlis.',
-    '💡 Tip: Add a pinch of salt just before making dosas, not before storing.',
-    '💡 Tip: Keep the batter refrigerated and use within 4–5 days for best taste.',
-    '💡 Tip: For crispier dosas, spread thin on a hot tawa and drizzle ghee at the edges.',
-    '💡 Tip: Millet dosa tastes best with peanut chutney and a little podi.'
+    ['పిండిని ఎక్కువగా కలపకండి — ఇడ్లీలు మెత్తగా వస్తాయి.', "Don't over-stir the batter — idlis stay soft and fluffy."],
+    ['దోశలు వేసే ముందే ఉప్పు కలపండి.', 'Add salt just before making dosas, not before storing.'],
+    ['పిండిని ఫ్రిజ్‌లో ఉంచి 4–5 రోజుల్లో వాడండి.', 'Keep refrigerated and use within 4–5 days.'],
+    ['కరకరలాడే దోశకు పెనం బాగా వేడెక్కాలి.', 'For crispy dosas, the tawa must be really hot.'],
+    ['చిరుధాన్యాల దోశకు పల్లీ చట్నీ అదిరిపోతుంది!', 'Millet dosa + peanut chutney = perfect!']
   ];
   let ti = 0;
   const tipEl = $('#tip');
-  tipEl.textContent = tips[0];
-  setInterval(() => { tipEl.style.opacity = 0; setTimeout(() => { ti = (ti + 1) % tips.length; tipEl.textContent = tips[ti]; tipEl.style.opacity = 1; }, 400); }, 5000);
+  const showTip = () => { tipEl.innerHTML = '<span class="te-tip">💡 ' + tips[ti][0] + '</span>' + tips[ti][1]; };
+  showTip();
+  setInterval(() => { tipEl.style.opacity = 0; setTimeout(() => { ti = (ti + 1) % tips.length; showTip(); tipEl.style.opacity = 1; }, 400); }, 6000);
 
   // ---------- Track ----------
-  const STATUSES = [['new', '📝', 'Received'], ['preparing', '🥣', 'Packing'], ['out', '🛵', 'On the way'], ['delivered', '✅', 'Delivered']];
+  const STATUSES = [['new', '📝', 'అందింది<br><small>Received</small>'], ['preparing', '🥣', 'ప్యాకింగ్<br><small>Packing</small>'], ['out', '🛵', 'దారిలో<br><small>On the way</small>'], ['delivered', '✅', 'చేరింది<br><small>Delivered</small>']];
   $('#trackForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
@@ -269,7 +271,7 @@
       const o = await r.json();
       if (!r.ok) throw new Error(o.error || 'Order not found');
       if (o.status === 'cancelled') { out.innerHTML = `<p><b>${esc(o.id)}</b> was cancelled. Please call us if this is unexpected.</p>`; return; }
-      const steps = o.mode === 'pickup' ? STATUSES.map((s) => (s[0] === 'out' ? ['out', '🏪', 'Ready for pickup'] : s[0] === 'delivered' ? ['delivered', '✅', 'Picked up'] : s)) : STATUSES;
+      const steps = o.mode === 'pickup' ? STATUSES.map((s) => (s[0] === 'out' ? ['out', '🏪', 'సిద్ధం<br><small>Ready for pickup</small>'] : s[0] === 'delivered' ? ['delivered', '✅', 'తీసుకున్నారు<br><small>Picked up</small>'] : s)) : STATUSES;
       const idx = steps.findIndex((s) => s[0] === o.status);
       out.innerHTML = `<p><b>${esc(o.id)}</b> · ${o.items.map((l) => `${esc(l.name)} × ${l.qty}`).join(', ')} · <b>${rupee(o.total)}</b></p>
         <div class="progress"><div class="bar" style="width:0"></div>${steps.map((s, i) => `<div class="st ${i <= idx ? 'on' : ''}"><i>${s[1]}</i>${s[2]}</div>`).join('')}</div>`;
