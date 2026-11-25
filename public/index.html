@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pallay Ruchulu · Fresh Idly & Dosa Batter, Hyderabad</title>
+  <meta name="description" content="Pallay Ruchulu - pure, fresh, healthy idly batter, dosa batter, millet dosa batter, chapati and poori. Stone-ground fresh every morning in Nizampet, Hyderabad. Order online for home delivery.">
+  <meta name="theme-color" content="#1d4a37">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231d4a37'/%3E%3Cellipse cx='32' cy='36' rx='18' ry='10' fill='%23fffaf0'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;500;600;700&family=Ramabhadra&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Opening animation ===== -->
+<div id="intro" aria-hidden="true">
+  <svg class="intro-art" viewBox="0 0 300 300">
+    <defs>
+      <radialGradient id="tawa" cx="50%" cy="45%" r="55%">
+        <stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#111"/>
+      </radialGradient>
+      <radialGradient id="dosaFill" cx="50%" cy="50%" r="50%">
+        <stop offset="0" stop-color="#f3d28a"/><stop offset=".75" stop-color="#d9973a"/><stop offset="1" stop-color="#a8641c"/>
+      </radialGradient>
+    </defs>
+    <g class="steam">
+      <path d="M120 70 q-12 -18 0 -34 q12 -16 0 -32"/>
+      <path d="M150 64 q-12 -18 0 -34 q12 -16 0 -32"/>
+      <path d="M180 70 q-12 -18 0 -34 q12 -16 0 -32"/>
+    </g>
+    <circle cx="150" cy="170" r="112" fill="url(#tawa)"/>
+    <circle cx="150" cy="170" r="112" fill="none" stroke="#555" stroke-width="3"/>
+    <line class="pour" x1="150" y1="-10" x2="150" y2="170"/>
+    <circle class="dosa" cx="150" cy="170" r="88" fill="url(#dosaFill)"/>
+    <path class="spiral" d="M150 170 m0 -6 a6 6 0 1 1 -0.1 0 m0 -14 a20 20 0 1 1 -0.1 0 m0 -16 a36 36 0 1 1 -0.1 0 m0 -16 a52 52 0 1 1 -0.1 0 m0 -16 a68 68 0 1 1 -0.1 0 m0 -16 a84 84 0 1 1 -0.1 0"/>
+  </svg>
+  <div class="intro-text">
+    <div class="intro-hello">నమస్కారం 🙏</div>
+    <div class="intro-logo">Pallay Ruchulu</div>
+    <div class="intro-tag">PURE · FRESH · HEALTHY</div>
+  </div>
+  <button class="intro-skip" type="button">Skip ›</button>
+</div>
+
+<div class="ribbon"><span>🔥 Fresh batch ground today at 5 AM</span><span class="dot">•</span><span id="ribbonDelivery">Free delivery above ₹300</span><span class="dot">•</span><span>No preservatives · No soda</span></div>
+
+<header class="nav">
+  <a href="#top" class="brand"><span class="brand-mark">PR</span><span class="brand-name">Pallay Ruchulu</span></a>
+  <nav class="links">
+    <a href="#products">Products</a><a href="#how">How we make it</a><a href="#track">Track order</a><a href="#visit">Visit us</a>
+  </nav>
+  <button class="cart-btn" id="openCart" type="button" aria-label="Open cart">🛒 <span>Cart</span> <b id="cartCount">0</b></button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">పల్లె రుచులు · Village Flavours</p>
+      <h1>Village taste,<br><em>ground fresh</em> every morning.</h1>
+      <p class="lead">Stone-ground idly & dosa batter, millet dosa batter, soft chapatis and pooris — made the way our grandmothers did, delivered to your kitchen in Nizampet & around.</p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary">Order now</a>
+        <a href="#" class="btn btn-ghost js-wa" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+      </div>
+      <div class="hero-meta">
+        <div class="rating"><span class="stars">★★★★★</span><b id="ratingVal">5.0</b> on Google · <span id="reviewCount">41</span> reviews</div>
+        <div class="open-now" id="openNow"></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="glow"></div>
+      <img src="images/pack.png" alt="Pallay Ruchulu Idly and Dosa Batter pack" class="pack">
+      <div class="float f1">🌾</div><div class="float f2">🥥</div><div class="float f3">🌶️</div><div class="float f4">🍃</div>
+      <div class="badge-fresh"><b>100%</b><span>Natural</span></div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div><span>🪨</span>Stone-ground</div>
+    <div><span>🌿</span>No preservatives</div>
+    <div><span>🧂</span>No baking soda</div>
+    <div><span>🏡</span>Village recipe</div>
+    <div><span>❄️</span>Packed fresh daily</div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Today's fresh menu</p>
+      <h2>What would you like for breakfast?</h2>
+      <div class="mood" id="mood">
+        <button type="button" data-filter="all" class="on">Everything</button>
+        <button type="button" data-filter="batter">🥣 Batters</button>
+        <button type="button" data-filter="ready">🫓 Ready to cook</button>
+      </div>
+    </div>
+    <div class="grid" id="productGrid"><div class="loading">Loading fresh products…</div></div>
+  </section>
+
+  <section id="how" class="section how">
+    <div class="section-head"><p class="eyebrow">From village kitchen to yours</p><h2>How we make it</h2></div>
+    <ol class="steps">
+      <li><div class="step-ic">💧</div><h3>Soak</h3><p>Premium rice & urad dal soaked overnight in clean RO water.</p></li>
+      <li><div class="step-ic">🪨</div><h3>Stone-grind</h3><p>Ground slowly on stone grinders — keeps it cool, smooth & fluffy.</p></li>
+      <li><div class="step-ic">⏳</div><h3>Ferment</h3><p>Naturally fermented. No soda, no shortcuts, no preservatives.</p></li>
+      <li><div class="step-ic">📦</div><h3>Pack fresh</h3><p>Hygienically packed every morning and delivered the same day.</p></li>
+    </ol>
+    <div class="tip" id="tip"></div>
+  </section>
+
+  <section id="track" class="section track">
+    <div class="track-card">
+      <div>
+        <p class="eyebrow">Already ordered?</p>
+        <h2>Track your order</h2>
+        <p class="muted">Enter your order ID (like PR1001) and the phone number you used.</p>
+      </div>
+      <form id="trackForm" class="track-form">
+        <input name="id" placeholder="Order ID e.g. PR1001" required autocomplete="off">
+        <input name="phone" placeholder="Phone number" inputmode="tel" required>
+        <button class="btn btn-primary" type="submit">Track</button>
+      </form>
+      <div id="trackResult" class="track-result" hidden></div>
+    </div>
+  </section>
+
+  <section id="visit" class="section visit">
+    <div class="visit-info">
+      <p class="eyebrow">Come say hello</p>
+      <h2>Visit our shop</h2>
+      <p id="addr"></p>
+      <p><b id="hours"></b></p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pallay+Ruchulu+Nizampet+Hyderabad">📍 Get directions</a>
+        <a class="btn btn-ghost" id="callBtn" href="#">📞 Call us</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Pallay Ruchulu location" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Pallay%20Ruchulu%20Nizampet%20Hyderabad&z=15&output=embed"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="brand-name big">Pallay Ruchulu</div>
+  <p>Pure · Fresh · Healthy — a unit of Sri Sai Balaji Foods Pvt Ltd</p>
+  <p class="muted small">© <span id="yr"></span> Pallay Ruchulu · <a href="/admin">Owner login</a></p>
+</footer>
+
+<a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.8.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+</a>
+
+<!-- ===== Cart drawer ===== -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Your cart" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Your basket</h3>
+    <button class="icon-btn" id="closeCart" type="button" aria-label="Close cart">✕</button>
+  </div>
+  <div class="drawer-body">
+    <div id="cartItems"></div>
+    <div id="cartEmpty" class="empty">
+      <div class="empty-art">🥣</div>
+      <p>Your basket is empty.<br>Fresh batter is waiting!</p>
+    </div>
+    <form id="checkout" class="checkout" hidden novalidate>
+      <div class="totals">
+        <div><span>Subtotal</span><b id="subtotal">₹0</b></div>
+        <div><span>Delivery</span><b id="deliveryFee">₹0</b></div>
+        <div class="free-hint" id="freeHint"></div>
+        <div class="grand"><span>Total</span><b id="grandTotal">₹0</b></div>
+      </div>
+      <h4>Your details</h4>
+      <input name="name" placeholder="Your name" autocomplete="name" required>
+      <input name="phone" placeholder="Phone number" inputmode="tel" autocomplete="tel" required>
+      <div class="seg">
+        <label><input type="radio" name="mode" value="delivery" checked><span>🛵 Home delivery</span></label>
+        <label><input type="radio" name="mode" value="pickup"><span>🏪 Pick up at shop</span></label>
+      </div>
+      <textarea name="address" id="addressField" rows="2" placeholder="Flat / house no, street, area, landmark"></textarea>
+      <div class="seg">
+        <label><input type="radio" name="payment" value="cod" checked><span>💵 Cash on delivery</span></label>
+        <label><input type="radio" name="payment" value="upi"><span>📱 UPI</span></label>
+      </div>
+      <input name="note" placeholder="Any note? (optional)">
+      <p class="form-error" id="formError" role="alert"></p>
+      <button class="btn btn-primary full" id="placeOrder" type="submit">Place order</button>
+    </form>
+  </div>
+</aside>
+
+<!-- ===== Success modal ===== -->
+<div class="modal" id="success" hidden>
+  <div class="modal-card">
+    <div class="success-art">🎉</div>
+    <h3>Order placed!</h3>
+    <p>Your order ID is <b id="sId"></b></p>
+    <p class="muted">Total <b id="sTotal"></b>. We'll call you shortly to confirm.</p>
+    <a class="btn btn-primary full" id="sUpi" hidden>📱 Pay with UPI app</a>
+    <p class="muted small" id="sUpiNote" hidden></p>
+    <a class="btn btn-ghost full" id="sWa" target="_blank" rel="noopener">💬 Send order on WhatsApp</a>
+    <button class="btn btn-link" id="sClose" type="button">Continue shopping</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

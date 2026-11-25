@@ -1,0 +1,14 @@
+{
+  "name": "pallay-ruchulu",
+  "version": "1.0.0",
+  "description": "Pallay Ruchulu - online store and owner dashboard",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "demo": "node scripts/seed-demo.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
