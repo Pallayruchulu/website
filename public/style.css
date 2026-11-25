@@ -357,3 +357,9 @@ input:focus, textarea:focus, select:focus { outline: none; border-color: var(--g
 .steps h3 { font-family: Poppins, sans-serif; font-weight: 600; font-size: 1.15rem; }
 .drawer-head h3, .checkout h4 { font-family: Poppins, sans-serif; font-weight: 600; }
 .modal-card h3 { font-family: Poppins, sans-serif; font-weight: 700; font-size: 1.7rem; color: var(--green); }
+
+/* WhatsApp is the main confirmation step after ordering */
+.btn-wa { background: #25d366; color: #fff; box-shadow: 0 5px 0 #128c4a, 0 10px 20px rgba(37, 211, 102, .3); }
+.btn-wa:hover { background: #20bd5a; }
+.btn-wa:active { box-shadow: 0 2px 0 #128c4a; transform: translateY(3px); }
+.wa-step { background: #e8f8ee; border: 1px solid #b9e8cb; border-radius: 12px; padding: 10px 12px; font-size: .92rem; color: #145c33; }

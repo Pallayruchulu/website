@@ -9,7 +9,8 @@
   };
 
   let products = [];
-  let settings = { deliveryCharge: 20, freeDeliveryAbove: 300, whatsapp: '', phone: '', upiId: '' };
+  const SHOP_WHATSAPP = '917993508884'; // fallback if settings can't load
+  let settings = { deliveryCharge: 20, freeDeliveryAbove: 300, whatsapp: SHOP_WHATSAPP, phone: '+91 79935 08884', upiId: '' };
   let cart = store.get('pr_cart', {}); // id -> qty
   let filter = 'all';
 
@@ -60,7 +61,7 @@
   }
 
   function waLink(text) {
-    const n = settings.whatsapp || '';
+    const n = settings.whatsapp || SHOP_WHATSAPP;
     return `https://wa.me/${n}?text=${encodeURIComponent(text)}`;
   }
 
@@ -71,7 +72,7 @@
     $('#hours').textContent = settings.hours || '';
     $('#callBtn').href = 'tel:' + (settings.phone || '').replace(/\s/g, '');
     $('#ribbonDelivery').textContent = `Free delivery above ${rupee(settings.freeDeliveryAbove)}`;
-    $$('.js-wa').forEach((a) => (a.href = waLink('Hi Pallay Ruchulu! I would like to order fresh batter.')));
+    $('.js-wa').forEach((a) => (a.href = waLink('Hi Pallay Ruchulu! I have a question.')));
     // open-now indicator (IST, 6am-8pm default)
     const h = new Date(Date.now() + (330 + new Date().getTimezoneOffset()) * 60000).getHours();
     const el = $('#openNow');
@@ -202,7 +203,7 @@
       const data = await r.json();
       if (!r.ok) throw new Error(data.error || 'Could not place order');
       store.set('pr_customer', { name: body.name, phone: body.phone, address: body.address });
-      const lines = body.items.map((i) => { const p = products.find((x) => x.id === i.id); return `• ${p.name} × ${i.qty}`; }).join('\n');
+      const lines = body.items.map((i) => { const p = products.find((x) => x.id === i.id); return `• ${p.name} (${p.unit}) × ${i.qty} = ${rupee(p.price * i.qty)}`; }).join('\n');
       cart = {}; store.set('pr_cart', cart);
       closeCart();
       showSuccess(data, lines, body);
@@ -224,9 +225,27 @@
       upi.href = `upi://pay?pa=${encodeURIComponent(settings.upiId)}&pn=${encodeURIComponent('Pallay Ruchulu')}&am=${order.total}&cu=INR&tn=${encodeURIComponent('Order ' + order.id)}`;
       note.textContent = `Or pay to UPI ID: ${settings.upiId}`;
     } else { upi.hidden = true; note.hidden = true; }
-    $('#sWa').href = waLink(`Hi Pallay Ruchulu! I placed order ${order.id}.\n${lines}\nTotal: ${rupee(order.total)} (${order.payment === 'upi' ? 'UPI' : 'Cash'})\nName: ${body.name}\n${body.mode === 'pickup' ? 'Pickup at shop' : 'Address: ' + body.address}`);
+    const msg = [
+      `🛒 *New order ${order.id}* — Pallay Ruchulu`,
+      '',
+      lines,
+      order.delivery ? `Delivery: ${rupee(order.delivery)}` : null,
+      `*Total: ${rupee(order.total)}* (${order.payment === 'upi' ? 'UPI' : 'Cash on delivery'})`,
+      '',
+      `👤 ${body.name} · 📞 ${body.phone}`,
+      body.mode === 'pickup' ? '🏪 Pickup at shop' : `🛵 Deliver to: ${body.address}`,
+      body.note ? `📝 ${body.note}` : null
+    ].filter((l) => l !== null).join('\n');
+    const wa = waLink(msg);
+    $('#sWa').href = wa;
     $('#success').hidden = false;
     confetti();
+    // Order is saved — now take the customer straight to WhatsApp to send it.
+    // Same-tab navigation is not blocked by popup blockers; the button above stays as a fallback.
+    setTimeout(() => {
+      $('#sWaMsg').innerHTML = 'If WhatsApp didn\'t open, tap the button below to send your order.';
+      window.location.href = wa;
+    }, 1500);
   }
   $('#sClose').addEventListener('click', () => ($('#success').hidden = true));
 
