@@ -49,7 +49,7 @@
   <button class="intro-skip" type="button">Skip ›</button>
 </div>
 
-<div class="ribbon"><span>🔥 ఈ రోజు ఉదయం 5 గంటలకు రుబ్బిన తాజా పిండి</span><span class="dot">•</span><span id="ribbonDelivery">Free delivery above ₹300</span><span class="dot">•</span><span>సోడా లేదు · No soda</span></div>
+<div class="ribbon"><span>🔥 Fresh batch ground today at 5 AM</span><span class="dot">•</span><span id="ribbonDelivery">Free delivery above ₹300</span><span class="dot">•</span><span>No preservatives · No soda</span></div>
 <div class="thoranam" aria-hidden="true"></div>
 
 <header class="nav">
@@ -58,12 +58,12 @@
     <span class="brand-text"><span class="brand-te">పల్లె రుచులు</span><span class="brand-en">Pallay Ruchulu</span></span>
   </a>
   <nav class="links">
-    <a href="#products">పిండి వంటలు <small>Products</small></a>
-    <a href="#how">మా పద్ధతి <small>Our way</small></a>
-    <a href="#track">ఆర్డర్ <small>Track</small></a>
-    <a href="#visit">అంగడి <small>Visit</small></a>
+    <a href="#products">Products</a>
+    <a href="#how">How we make it</a>
+    <a href="#track">Track order</a>
+    <a href="#visit">Visit us</a>
   </nav>
-  <button class="cart-btn" id="openCart" type="button" aria-label="Open basket">🧺 <span>బుట్ట</span> <b id="cartCount">0</b></button>
+  <button class="cart-btn" id="openCart" type="button" aria-label="Open basket">🧺 <span>Basket</span> <b id="cartCount">0</b></button>
 </header>
 
 <main id="top">
@@ -73,8 +73,8 @@
       <h1><span class="te">అమ్మమ్మ చేతి రుచి,</span><span class="te"><em>ప్రతి ఉదయం తాజాగా.</em></span><span class="en">Grandma's taste, ground fresh every morning.</span></h1>
       <p class="lead">Stone-ground idly & dosa batter, millet dosa batter, soft chapatis and pooris — made the way our grandmothers did in the village, delivered to your kitchen in Nizampet & around.</p>
       <div class="hero-cta">
-        <a href="#products" class="btn btn-primary">ఇప్పుడే ఆర్డర్ చేయండి · Order now</a>
-        <a href="#" class="btn btn-ghost js-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a href="#products" class="btn btn-primary">Order now</a>
+        <a href="#" class="btn btn-ghost js-wa" target="_blank" rel="noopener">💬 Order on WhatsApp</a>
       </div>
       <div class="hero-meta">
         <div class="rating"><span class="stars">★★★★★</span><b id="ratingVal">5.0</b> on Google · <span id="reviewCount">41</span> reviews</div>
@@ -126,33 +126,34 @@
   </div>
 
   <section class="strip">
-    <div><span>🪨</span><b>రోట్లో రుబ్బినది</b><small>Stone-ground</small></div>
-    <div><span>🌿</span><b>నిల్వ పదార్థాలు లేవు</b><small>No preservatives</small></div>
-    <div><span>🧂</span><b>సోడా లేదు</b><small>No baking soda</small></div>
-    <div><span>🏡</span><b>పల్లె పద్ధతి</b><small>Village recipe</small></div>
-    <div><span>🌅</span><b>రోజూ తాజాగా</b><small>Fresh daily</small></div>
+    <div><span>🪨</span><b>Stone-ground</b></div>
+    <div><span>🌿</span><b>No preservatives</b></div>
+    <div><span>🧂</span><b>No baking soda</b></div>
+    <div><span>🏡</span><b>Village recipe</b></div>
+    <div><span>🌅</span><b>Fresh every morning</b></div>
   </section>
 
   <section id="products" class="section">
     <div class="section-head">
       <div class="muggu" aria-hidden="true"></div>
-      <h2><span class="te">ఈ రోజు టిఫిన్ ఏంటి?</span><span class="en">What's for breakfast today?</span></h2>
+      <p class="eyebrow-en">Today's fresh menu</p>
+      <h2>What's for breakfast today?</h2>
       <div class="mood" id="mood">
-        <button type="button" data-filter="all" class="on">అన్నీ · All</button>
-        <button type="button" data-filter="batter">🥣 పిండి · Batters</button>
-        <button type="button" data-filter="ready">🫓 రెడీ · Ready to cook</button>
+        <button type="button" data-filter="all" class="on">Everything</button>
+        <button type="button" data-filter="batter">🥣 Batters</button>
+        <button type="button" data-filter="ready">🫓 Ready to cook</button>
       </div>
     </div>
-    <div class="grid" id="productGrid"><div class="loading">తాజా పిండి వస్తోంది… Loading fresh products…</div></div>
+    <div class="grid" id="productGrid"><div class="loading">Loading fresh products…</div></div>
   </section>
 
   <section id="how" class="section how">
-    <div class="section-head"><h2><span class="te">మా పల్లె పద్ధతి</span><span class="en">How we make it — the village way</span></h2></div>
+    <div class="section-head"><p class="eyebrow-en">From our village kitchen to yours</p><h2>How we make it</h2></div>
     <ol class="steps">
-      <li><div class="step-ic">💧</div><h3>నానబెట్టడం <small>Soak</small></h3><p>Premium rice & urad dal soaked overnight in clean RO water.</p></li>
-      <li><div class="step-ic">🪨</div><h3>రోట్లో రుబ్బడం <small>Stone-grind</small></h3><p>Ground slowly on stone grinders — keeps it cool, smooth & fluffy.</p></li>
-      <li><div class="step-ic">⏳</div><h3>పులియబెట్టడం <small>Ferment</small></h3><p>Naturally fermented. No soda, no shortcuts, no preservatives.</p></li>
-      <li><div class="step-ic">🧺</div><h3>తాజాగా ప్యాకింగ్ <small>Pack fresh</small></h3><p>Hygienically packed every morning and delivered the same day.</p></li>
+      <li><div class="step-ic">💧</div><h3>Soak</h3><p>Premium rice & urad dal soaked overnight in clean RO water.</p></li>
+      <li><div class="step-ic">🪨</div><h3>Stone-grind</h3><p>Ground slowly on stone grinders — keeps it cool, smooth & fluffy.</p></li>
+      <li><div class="step-ic">⏳</div><h3>Ferment</h3><p>Naturally fermented. No soda, no shortcuts, no preservatives.</p></li>
+      <li><div class="step-ic">🧺</div><h3>Pack fresh</h3><p>Hygienically packed every morning and delivered the same day.</p></li>
     </ol>
     <div class="tip" id="tip"></div>
   </section>
@@ -160,13 +161,13 @@
   <section id="track" class="section track">
     <div class="track-card">
       <div>
-        <h2><span class="te">మీ ఆర్డర్ ఎక్కడ ఉంది?</span><span class="en">Track your order</span></h2>
+        <p class="eyebrow-en">Already ordered?</p><h2>Track your order</h2>
         <p class="muted">Enter your order ID (like PR1001) and the phone number you used.</p>
       </div>
       <form id="trackForm" class="track-form">
         <input name="id" placeholder="Order ID e.g. PR1001" required autocomplete="off">
         <input name="phone" placeholder="Phone number" inputmode="tel" required>
-        <button class="btn btn-primary" type="submit">చూడండి · Track</button>
+        <button class="btn btn-primary" type="submit">Track</button>
       </form>
       <div id="trackResult" class="track-result" hidden></div>
     </div>
@@ -174,12 +175,12 @@
 
   <section id="visit" class="section visit">
     <div class="visit-info">
-      <h2><span class="te">మా అంగడికి రండి</span><span class="en">Visit our shop</span></h2>
+      <p class="eyebrow-en">Come say hello</p><h2>Visit our shop</h2>
       <p id="addr"></p>
       <p><b id="hours"></b></p>
       <div class="hero-cta">
-        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pallay+Ruchulu+Nizampet+Hyderabad">📍 దారి · Directions</a>
-        <a class="btn btn-ghost" id="callBtn" href="#">📞 ఫోన్ · Call</a>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pallay+Ruchulu+Nizampet+Hyderabad">📍 Get directions</a>
+        <a class="btn btn-ghost" id="callBtn" href="#">📞 Call us</a>
       </div>
     </div>
     <div class="map">
@@ -192,7 +193,7 @@
   <div class="muggu light" aria-hidden="true"></div>
   <svg class="foot-mark" aria-hidden="true"><use href="#pot"/></svg>
   <div class="foot-te">పల్లె రుచులు</div>
-  <p>స్వచ్ఛం · తాజా · ఆరోగ్యం — Pure · Fresh · Healthy<br>A unit of Sri Sai Balaji Foods Pvt Ltd</p>
+  <p>Pure · Fresh · Healthy<br>A unit of Sri Sai Balaji Foods Pvt Ltd</p>
   <p class="muted small">© <span id="yr"></span> Pallay Ruchulu · <a href="/admin">Owner login</a></p>
 </footer>
 
@@ -204,37 +205,37 @@
 <div class="scrim" id="scrim" hidden></div>
 <aside class="drawer" id="drawer" aria-label="Your basket" aria-hidden="true">
   <div class="drawer-head">
-    <h3>🧺 మీ బుట్ట <small>Your basket</small></h3>
+    <h3>🧺 Your basket</h3>
     <button class="icon-btn" id="closeCart" type="button" aria-label="Close basket">✕</button>
   </div>
   <div class="drawer-body">
     <div id="cartItems"></div>
     <div id="cartEmpty" class="empty">
       <div class="empty-art">🥣</div>
-      <p>మీ బుట్ట ఖాళీగా ఉంది.<br>Your basket is empty — fresh batter is waiting!</p>
+      <p>Your basket is empty.<br>Fresh batter is waiting!</p>
     </div>
     <form id="checkout" class="checkout" hidden novalidate>
       <div class="totals">
         <div><span>Subtotal</span><b id="subtotal">₹0</b></div>
         <div><span>Delivery</span><b id="deliveryFee">₹0</b></div>
         <div class="free-hint" id="freeHint"></div>
-        <div class="grand"><span>మొత్తం · Total</span><b id="grandTotal">₹0</b></div>
+        <div class="grand"><span>Total</span><b id="grandTotal">₹0</b></div>
       </div>
-      <h4>మీ వివరాలు · Your details</h4>
-      <input name="name" placeholder="పేరు · Your name" autocomplete="name" required>
-      <input name="phone" placeholder="ఫోన్ · Phone number" inputmode="tel" autocomplete="tel" required>
+      <h4>Your details</h4>
+      <input name="name" placeholder="Your name" autocomplete="name" required>
+      <input name="phone" placeholder="Phone number" inputmode="tel" autocomplete="tel" required>
       <div class="seg">
-        <label><input type="radio" name="mode" value="delivery" checked><span>🛵 ఇంటికి · Delivery</span></label>
-        <label><input type="radio" name="mode" value="pickup"><span>🏪 అంగడిలో · Pickup</span></label>
+        <label><input type="radio" name="mode" value="delivery" checked><span>🛵 Home delivery</span></label>
+        <label><input type="radio" name="mode" value="pickup"><span>🏪 Pick up at shop</span></label>
       </div>
-      <textarea name="address" id="addressField" rows="2" placeholder="చిరునామా · Flat / house no, street, area, landmark"></textarea>
+      <textarea name="address" id="addressField" rows="2" placeholder="Flat / house no, street, area, landmark"></textarea>
       <div class="seg">
-        <label><input type="radio" name="payment" value="cod" checked><span>💵 నగదు · Cash</span></label>
+        <label><input type="radio" name="payment" value="cod" checked><span>💵 Cash on delivery</span></label>
         <label><input type="radio" name="payment" value="upi"><span>📱 UPI</span></label>
       </div>
       <input name="note" placeholder="Any note? (optional)">
       <p class="form-error" id="formError" role="alert"></p>
-      <button class="btn btn-primary full" id="placeOrder" type="submit">ఆర్డర్ చేయండి · Place order</button>
+      <button class="btn btn-primary full" id="placeOrder" type="submit">Place order</button>
     </form>
   </div>
 </aside>
@@ -242,8 +243,8 @@
 <!-- ===== Success modal ===== -->
 <div class="modal" id="success" hidden>
   <div class="modal-card">
-    <div class="success-art">🙏</div>
-    <h3>ధన్యవాదాలు!</h3>
+    <div class="success-art">🎉</div>
+    <h3>Thank you!</h3>
     <p>Order placed. Your order ID is <b id="sId"></b></p>
     <p class="muted">Total <b id="sTotal"></b>. We'll call you shortly to confirm.</p>
     <a class="btn btn-primary full" id="sUpi" hidden>📱 Pay with UPI app</a>

@@ -344,3 +344,16 @@ input:focus, textarea:focus, select:focus { outline: none; border-color: var(--g
 .hero h1 em::after { display: none; }
 .tag { z-index: 2; }
 .few { top: auto; bottom: 10px; right: 10px; z-index: 2; }
+
+
+/* English UI (Telugu reserved for brand: logo, hero headline, badge, intro) */
+.eyebrow-en { font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; color: var(--clay); font-weight: 600; margin: 0 0 .4em; }
+.how .eyebrow-en { color: var(--gold-soft); }
+.section-head h2, .track-card h2, .visit h2 { font-family: Poppins, sans-serif; font-weight: 700; }
+.links a { font-family: Poppins, sans-serif; font-weight: 500; }
+.btn, .cart-btn, .mood button, .add { font-family: Poppins, sans-serif; font-weight: 600; }
+.strip b { font-family: Poppins, sans-serif; font-weight: 600; font-size: .92rem; }
+.card-body h3 { font-family: Poppins, sans-serif; font-weight: 600; font-size: 1.15rem; }
+.steps h3 { font-family: Poppins, sans-serif; font-weight: 600; font-size: 1.15rem; }
+.drawer-head h3, .checkout h4 { font-family: Poppins, sans-serif; font-weight: 600; }
+.modal-card h3 { font-family: Poppins, sans-serif; font-weight: 700; font-size: 1.7rem; color: var(--green); }
