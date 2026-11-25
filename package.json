@@ -1,14 +1,15 @@
 {
   "name": "pallay-ruchulu",
-  "version": "1.0.0",
-  "description": "Pallay Ruchulu - online store and owner dashboard",
-  "main": "server.js",
+  "version": "2.0.0",
+  "description": "Pallay Ruchulu - online store, owner dashboard and staff stall tracking (Vercel + Supabase)",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "demo": "node scripts/seed-demo.js"
+    "start": "node server.js"
   },
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.109.0"
   }
 }
